@@ -1,0 +1,834 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lilita+One&family=Londrina+Shadow&family=Sixtyfour&family=Spicy+Rice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Bree+Serif&family=Lilita+One&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Londrina+Shadow&family=Sixtyfour&family=Spicy+Rice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+           
+
+            
+        }
+        .curtain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1000;
+    pointer-events: none; /* Interactions disabled initially */
+}
+
+/* Curtain-open class pe events re-enable ho jayenge */
+.curtain-open .curtain-container {
+    pointer-events: auto;
+}
+
+        .curtain-part {
+            flex: 1;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            background-repeat: no-repeat;
+        }
+        .curtain-left {
+            transform-origin: left top;
+            background-image: url('https://cdn.jsdelivr.net/gh/2O25pic/Dost@latest/CH-PardaLeft01.jpg');
+        }
+        .curtain-right {
+            transform-origin: right top;
+            background-image: url('https://cdn.jsdelivr.net/gh/2O25pic/Dost@latest/CH-PardaRight02.jpg');
+        }
+        .curtain-open .curtain-left {
+            transform: translateX(-100%);
+        }
+        .curtain-open .curtain-right {
+            transform: translateX(100%);
+        }
+        
+        .helicopter {
+            position: fixed;
+            width: 200px;
+            top: 0;
+            left: 0;
+            z-index: 1002;
+            animation: flyToCenter 2s ease-in-out forwards, hover 2s ease-in-out infinite 2s;
+        }
+        .gift {
+            position: absolute;
+            width: 100px;
+            top: -50px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1003;
+            display: none;
+            cursor: pointer;
+        }
+        @keyframes flyToCenter {
+            0% { top: -100px; left: 0; }
+            100% { top: 30%; left: 50%; transform: translate(-50%, -50%); }
+        }
+        @keyframes hover {
+            0%, 100% { transform: translate(-50%, -50%); }
+            50% { transform: translate(-50%, calc(-50% - 10px)); }
+        }
+        @keyframes dropAndScale {
+            0% { 
+                top: calc(30% + 50px);
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            70% {
+                top: 70%;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            100% { 
+                top: 70%;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        @keyframes zoomInOutShake {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1) rotate(0deg); 
+    }
+    25% {
+        transform: translate(-50%, -50%) scale(1.1) rotate(0deg); /* Zoom in */
+    }
+    50% { 
+        transform: translate(-50%, -50%) scale(1.3) rotate(-8deg); /* Shake to left */
+    }
+    75% { 
+        transform: translate(-50%, -50%) scale(1.1) rotate(8deg); /* Zoom in and shake to right */
+    }
+}
+
+
+        .bonus {
+            position: absolute;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+          background-image: linear-gradient(to right top, #46083e, #5a003b, #6b0035, #7a002c, #860020, #8d2815, #904308, #8f5a00, #86821c, #72a650, #51c890, #0ce7d9);
+   border-radius: 6px;
+   -webkit-box-shadow: 0px 0px 0px 3px rgba(255,255,255,1);
+-moz-box-shadow: 0px 0px 0px 3px rgba(255,255,255,1);
+box-shadow: 0px 0px 0px 3px rgba(255,255,255,1);
+            z-index: 1004;
+            display: none;
+            padding: 5px;
+        }
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .curtain-part {
+                background-size: 100% 100%;
+            }
+        }
+
+       .content {
+    width: auto;
+    margin: 0 auto; /* Centers horizontally only */
+    padding: 40px 20px 20px;
+    text-align: center;
+        }
+
+.m1 {
+    position: fixed;
+    left: 1%;
+    width: auto;
+    height: 100%;
+    top: 1%;
+    color: #000;
+   
+}
+
+.m2 {
+    position: fixed;
+    right: 1%;
+    width: auto;
+    height: 100%;
+    top: 1%;
+    color: #000;
+    
+}
+
+
+@keyframes shake-center {
+            
+        0% {
+            transform:rotate(0deg);
+            transform-origin:50% 50%;
+        }
+        10% {
+            transform:rotate(8deg);
+        }
+        20% {
+            transform:rotate(-10deg);
+        }
+        30% {
+            transform:rotate(10deg);
+        }
+        40% {
+            transform:rotate(-10deg);
+        }
+        50% {
+            transform:rotate(10deg);
+        }
+        60% {
+            transform:rotate(-10deg);
+        }
+        70% {
+            transform:rotate(10deg);
+        }
+        80% {
+            transform:rotate(-8deg);
+        }
+        90% {
+            transform:rotate(8deg);
+        }
+        100% {
+            transform:rotate(0deg);
+            transform-origin:50% 50%;
+        }
+    }
+    .fireworks-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.firstwish{
+width: 300px;
+margin: 0 auto;
+display: flex;
+justify-content: center;
+animation: zoom-swing 4s ease-in-out infinite; /* Adjust duration as needed */
+}
+@keyframes zoom-swing {
+    0% {
+        transform: scale(0); /* Start with a zoomed-out effect */
+        opacity: 0; /* Start with no opacity */
+    }
+    10% {
+        transform: scale(1.1); /* Zoom in slightly */
+        opacity: 1; /* Fade in to full opacity */
+    }
+    30% {
+        transform: scale(1) rotate(5deg); /* Start swing to the right */
+    }
+    50% {
+        transform: scale(1) rotate(-5deg); /* Swing to the left */
+    }
+    70% {
+        transform: scale(1) rotate(3deg); /* Swing slightly back to the right */
+    }
+    90% {
+        transform: scale(1.05) rotate(0); /* Centered with slight zoom out */
+    }
+    100% {
+        transform: scale(1); /* Return to original scale */
+    }
+}
+
+/* Apply the animation to the image */
+
+
+.wish {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    animation: zoom-in-out 2s linear 0s infinite normal none;*/
+}
+@keyframes zoom-in-out-2 {
+            
+        0% {
+            transform:scale(1);
+        }
+        50% {
+            transform:scale(1.2);
+        }
+        100% {
+            transform:scale(1);
+        }
+    }
+
+#demo {
+    color: yellow;
+    font-size: 16px;
+    font-family: "Lilita One", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+}
+
+
+
+
+h1{
+    color: white;
+    font-size: 30px;
+
+}
+
+/* Initially completely hidden */
+        .word {
+            display: inline-block;
+            opacity: 0; /* Initially invisible */
+            visibility: hidden; /* Initially hidden from layout */
+            transform: translateY(100px); /* Start from below */
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            margin: 1px;
+            font-size: 20px; /* Increase font size */
+            font-weight: bold;
+            
+           
+        }
+
+        /* Animation when the word becomes visible */
+        .word.visible {
+            opacity: 1;
+            visibility: visible; /* Make visible only when in view */
+            animation: slideRotateJump 2s ease forwards;
+            animation-delay: 0.5s; /* Add delay for smooth appearance */
+            font-size: 20px; /* Increase font size */
+            font-family: "Bree Serif", serif;
+              font-weight: 400;
+              font-style: normal;
+              text-shadow: 1px 1px 3px black, 1px 1px 3px black, -1px -1px 3px black, -1px -1px 3px black;
+
+        }
+
+        /* Keyframes for slide up, rotate, and final jump effect */
+        @keyframes slideRotateJump {
+            0% {
+                transform: translateY(100px); /* Start below */
+            }
+            50% {
+                transform: translateY(-10px) rotate(-15deg); /* Move up with a small rotation */
+            }
+            70% {
+                transform: translateY(0px) rotate(15deg); /* Jump slightly upwards and rotate in other direction */
+            }
+            85% {
+                transform: translateY(-5px); /* Final small jump up */
+            }
+            100% {
+                transform: translateY(0) rotate(0); /* Settle back to final position */
+            }
+        }
+
+        
+        /* Fixed container styling */
+/* Sticky container styling */
+.sticky-container {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    gap: 10px;
+/*    background-color: transparent;*/
+    padding: 10px;
+/*    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);*/
+    z-index: 999; /* Increase z-index to stay above curtain */
+    justify-content: center;
+}
+
+.sticky-container form {
+    display: flex;
+    gap: 10px; /* Space between input and button */
+    width: 100%;
+}
+
+/* Input styling */
+.sticky-container input {
+    padding: 8px;
+    font-size: 18px;
+    width: 70%;
+    line-height: 30px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, hsla(182, 64%, 53%, 1) 0%, hsla(34, 98%, 50%, 1) 50%, hsla(323, 100%, 47%, 1) 100%);
+    color: white;
+    border: 2px solid white;
+    animation: zoom-in-out 2s ease 1s infinite normal none;
+    outline: 2px solid yellow; /* Outline color and width */
+outline-offset: 1px; /* Space between the form and the outline */
+border-radius: 8px;
+text-align: center;
+height: 35px;
+}
+.sticky-container input::placeholder {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Button styling */
+.sticky-container button {
+    padding: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 23%;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: linear-gradient(90deg, hsla(182, 64%, 53%, 1) 0%, hsla(34, 98%, 50%, 1) 50%, hsla(323, 100%, 47%, 1) 100%);
+animation: zoom-in-out 2s ease 1s infinite normal none; 
+outline: 2px solid yellow; /* Outline color and width */
+outline-offset: 1px; /* Space between the form and the outline */
+border-radius: 8px; 
+color: white;
+font-weight: bold;
+}
+
+@keyframes zoom-in-out {
+            
+        0% {
+            transform:scale(1);
+        }
+        50% {
+            transform:scale(0.9);
+        }
+        100% {
+            transform:scale(1);
+        }
+    }
+
+  @font-face {
+    font-family: 'Wonderbar'; /* Yaha font ka naam dena hai */
+    src: url('https://cdn.jsdelivr.net/gh/2O25pic/Dost@latest/FalconsFont.ttf') format('truetype'); /* Font ka path aur format */
+    font-weight: normal;
+    font-style: normal;
+}
+  
+
+       .name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Set width to 200px as per your comment */
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.dynamic-text {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    -webkit-text-stroke: 1px transparent;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.2;
+    white-space: pre-wrap;
+    font-family: 'Wonderbar', sans-serif;
+    z-index: 2; /* Positioning above the glowing layer */
+    animation: swing 3s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+.dynamic-text::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    z-index: -2;
+    background: linear-gradient(90deg, #476fcf, #0fbcf4, #dc0035, #09d3f7, #4d64ca, #e50126, #ff4401, #8812a4, #ce0048, #ffca00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: pre-wrap;
+    line-height: 1.2;
+    text-align: center;
+    font-family: 'Wonderbar', sans-serif;
+}
+
+.dynamic-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    z-index: -3;
+    font-size: 30px;
+    color: transparent;
+    animation: glowingGradient 3s linear infinite;
+    white-space: pre-wrap;
+    line-height: 1.2;
+}
+
+@keyframes glowingGradient {
+    0% {
+        text-shadow: 0 0 5px #476fcf, 0 0 10px #476fcf, 0 0 15px #476fcf, 0 0 20px #476fcf, 0 0 25px #476fcf;
+    }
+    10% {
+        text-shadow: 0 0 5px #0fbcf4, 0 0 10px #0fbcf4, 0 0 15px #0fbcf4, 0 0 20px #0fbcf4, 0 0 25px #0fbcf4;
+    }
+    20% {
+        text-shadow: 0 0 5px #dc0035, 0 0 10px #dc0035, 0 0 15px #dc0035, 0 0 20px #dc0035, 0 0 25px #dc0035;
+    }
+    30% {
+        text-shadow: 0 0 5px #09d3f7, 0 0 10px #09d3f7, 0 0 15px #09d3f7, 0 0 20px #09d3f7, 0 0 25px #09d3f7;
+    }
+    40% {
+        text-shadow: 0 0 5px #4d64ca, 0 0 10px #4d64ca, 0 0 15px #4d64ca, 0 0 20px #4d64ca, 0 0 25px #4d64ca;
+    }
+    50% {
+        text-shadow: 0 0 5px #e50126, 0 0 10px #e50126, 0 0 15px #e50126, 0 0 20px #e50126, 0 0 25px #e50126;
+    }
+    60% {
+        text-shadow: 0 0 5px #ff4401, 0 0 10px #ff4401, 0 0 15px #ff4401, 0 0 20px #ff4401, 0 0 25px #ff4401;
+    }
+    70% {
+        text-shadow: 0 0 5px #8812a4, 0 0 10px #8812a4, 0 0 15px #8812a4, 0 0 20px #8812a4, 0 0 25px #8812a4;
+    }
+    80% {
+        text-shadow: 0 0 5px #ce0048, 0 0 10px #ce0048, 0 0 15px #ce0048, 0 0 20px #ce0048, 0 0 25px #ce0048;
+    }
+    90% {
+        text-shadow: 0 0 5px #ffca00, 0 0 10px #ffca00, 0 0 15px #ffca00, 0 0 20px #ffca00, 0 0 25px #ffca00;
+    }
+    100% {
+        text-shadow: 0 0 5px #476fcf, 0 0 10px #476fcf, 0 0 15px #476fcf, 0 0 20px #476fcf, 0 0 25px #476fcf;
+    }
+}
+
+
+
+
+        .dynamic-text2 {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            position: relative;
+            -webkit-text-stroke: 1px #ff0e0e00;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.2;
+            white-space: pre-wrap;
+            font-family: 'Wonderbar', sans-serif;
+            z-index: 2;
+            animation: slit-in-diagonal-2 3s ease-in-out infinite;
+        }
+
+        .dynamic-text2::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 6px;
+            top: 6px;
+            z-index: -2;
+            background: linear-gradient(90deg, #476fcf, #0fbcf4, #dc0035, #09d3f7, #4d64ca, #e50126, #ff4401, #8812a4, #ce0048, #ffca00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 0;
+            white-space: pre-wrap;
+            line-height: 1.2;
+            text-align: center;
+            font-family: 'Wonderbar', sans-serif;
+
+        }
+.dynamic-text2::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    z-index: -3;
+    font-size: 20px;
+    color: transparent;
+    animation: glowingGradient 3s linear infinite;
+    white-space: pre-wrap;
+    line-height: 1.2;
+}
+
+
+/* Swing animation */
+        @keyframes swing {
+            0% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+        
+        @keyframes slit-in-diagonal-2 {
+    0% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5) rotate(-45deg);
+        opacity: 0;
+    }
+}
+        h2{
+            line-height: 22px;
+        }
+
+        /* Text styling */
+  .username2 {
+    color: black;
+background: url(https://i.gifer.com/LUxI.gif);
+  background-clip: border-box;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: username2 4s infinite;
+text-transform: uppercase;
+margin-bottom: 5px;
+font-size: 40px;
+font-family: "Noto Sans", sans-serif;
+padding: 0 10px;
+
+}
+
+  
+
+  
+
+  /* Keyframes for text swing animation */
+  @keyframes username2 {
+    0% {
+      transform:scale(.2);
+    }
+    10% {
+      
+    }
+    25%{
+      transform:translateY(0);
+    }
+    40% {
+      transform:translateY(-24px);
+    }
+    55% {
+      transform:translateY(0);
+    }
+    65% {
+      transform:translateY(-12px);
+    }
+    70% {
+      transform:rotate(10deg);
+    }
+    80% {
+      transform:rotate(-8deg);
+    }
+    85% {
+      transform:skew(5deg,5deg);
+    }
+    100% {
+      transform:skew(0deg, 0deg);
+    }
+  }
+
+  .shareBtn,
+.shareShow {
+    position: fixed;
+    right: calc(50% - 145px);
+    bottom: 5px;
+    width: 300px;
+    height: 60px;
+    background-color: #007f00;
+    border-radius: 100px;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: 1px;
+    overflow: hidden;
+    display: none;
+    z-index: 10;
+}
+
+.shareBtn.active {
+    display: block;
+    font-weight: bold;
+}
+
+.shareShow {
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    background-color: red;
+    border-radius: 50px;
+    position: fixed;
+    left: 50%;
+    /* Position to the center horizontally */
+    transform: translateX(-50%);
+    /* Adjust to perfectly center */
+    bottom: 25px;
+    /* Keeps the button at the bottom */
+    text-align: center;
+}
+
+.platforms {
+    position: fixed;
+    right: calc(50% - 145px);
+    height: 100px;
+    width: 300px;
+    bottom: 75px;
+    border-radius: 5px;
+    visibility: hidden;
+    transform: scale(1);
+    opacity: 0;
+    z-index: 10;
+}
+
+.platforms.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.platformIcons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.socialBox {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* WhatsApp Styles */
+
+.whatsapp {
+    background-color: #1a5275;
+}
+
+.whatsapp:hover {
+    background-color: #20b358;
+}
+
+/* Facebook Styles */
+
+.facebook {
+    background-color: #1a5275;
+}
+
+.facebook:hover {
+    background-color: #324e84;
+}
+
+/* Icon Styling */
+
+.socialBox img {
+    animation: tada 2s ease-in-out infinite;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+/* Text Styling */
+
+.socialBox span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#closeBtn {
+    background-color: red;
+}
+
+.shareBtn,
+.shareShow,
+.platforms a {
+    text-decoration: none;
+}
+
+/* Animation for the Emoji */
+
+@keyframes shake-right {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+    10% {
+        transform: rotate(8deg);
+    }
+    20% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(-10deg);
+    }
+    70% {
+        transform: rotate(10deg);
+    }
+    80% {
+        transform: rotate(-8deg);
+    }
+    90% {
+        transform: rotate(8deg);
+    }
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+}
+
+/* Apply the shake-right animation to span (emoji) */
+
+.span {
+    display: inline-block;
+    animation: shake-right 2s infinite ease-in-out;
+    font-size: 24px;
+    /* Adjust the emoji size if needed */
+}
+
+.wish3{
+    width: 250px;
+    animation: wobble-ver-left 1s linear 0s infinite normal none;*/
+}
+
+@keyframes wobble-ver-left {
+            
+        0% {
+            transform:translateY(0) rotate(0);
+            transform-origin:50% 50%;
+        }
+        15% {
+            transform:translateY(-30px) rotate(-6deg);
+        }
+        30% {
+            transform:translateY(15px) rotate(6deg);
+        }
+        45% {
+            transform:translateY(-15px) rotate(-3.6deg);
+        }
+        60% {
+            transform:translateY(9px) rotate(2.4deg);
+        }
+        75% {
+            transform:translateY(-6px) rotate(-1.2deg);
+        }
+        100% {
+            transform:translateY(0) rotate(0);
+            transform-origin:50% 50%;
+        }
+    }
